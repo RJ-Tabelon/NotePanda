@@ -5,7 +5,7 @@ A modern, full-stack note-taking application built with the MERN stack, featurin
 ## Features
 
 - **Full CRUD Operations**: Create, read, update, and delete notes seamlessly
-- **⚡ Rate Limiting**: Smart rate limiting powered by Upstash Redis to prevent abuse
+- **Rate Limiting**: Smart rate limiting powered by Upstash Redis to prevent abuse
 - **Modern UI**: Beautiful, responsive design using Tailwind CSS and DaisyUI
 - **Mobile Responsive**: Works perfectly on all device sizes
 - **Real-time Feedback**: Toast notifications for all user actions
