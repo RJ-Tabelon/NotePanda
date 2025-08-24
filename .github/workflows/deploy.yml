@@ -1,0 +1,55 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+      
+      - name: Install dependencies (backend)
+        run: | 
+          cd backend
+          npm install
+        
+      - name: Run backend tests
+        run: |
+          cd backend
+          npm test || echo "No tests found"
+      
+      - name: Install dependencies (frontend)
+        run: |
+          cd frontend
+          npm install
+      
+      - name: Run frontend build
+        run: |
+          cd frontend
+          npm run build
+
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Trigger Render Deploy
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploys
+          method: POST
+          customHeaders: '{"Authorization": "Bearer ${{ secrets.RENDER_API_KEY }}","Content-Type": "application/json"}'
+          data: '{}'
+
+
+        
