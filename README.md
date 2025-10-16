@@ -2,6 +2,8 @@
 
 A modern, full-stack note-taking application built with the MERN stack, featuring intelligent rate limiting and a sleek, responsive user interface.
 
+![Home.png](Home.png)
+
 ## Features
 
 - **Full CRUD Operations**: Create, read, update, and delete notes seamlessly
@@ -14,6 +16,7 @@ A modern, full-stack note-taking application built with the MERN stack, featurin
 ## Tech Stack
 
 ### Frontend
+
 - **React 19** - Modern UI library with hooks
 - **React Router 7** - Client-side routing
 - **Tailwind CSS** - Utility-first CSS framework
@@ -24,6 +27,7 @@ A modern, full-stack note-taking application built with the MERN stack, featurin
 - **Lucide React** - Beautiful icons
 
 ### Backend
+
 - **Node.js** - JavaScript runtime
 - **Express.js** - Web application framework
 - **MongoDB** - NoSQL database
@@ -72,13 +76,13 @@ NotePanda/
 
 ## API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/api/notes` | Get all notes |
-| `GET` | `/api/notes/:id` | Get a specific note |
-| `POST` | `/api/notes` | Create a new note |
-| `PUT` | `/api/notes/:id` | Update a note |
-| `DELETE` | `/api/notes/:id` | Delete a note |
+| Method   | Endpoint         | Description         |
+| -------- | ---------------- | ------------------- |
+| `GET`    | `/api/notes`     | Get all notes       |
+| `GET`    | `/api/notes/:id` | Get a specific note |
+| `POST`   | `/api/notes`     | Create a new note   |
+| `PUT`    | `/api/notes/:id` | Update a note       |
+| `DELETE` | `/api/notes/:id` | Delete a note       |
 
 ## Rate Limiting
 
